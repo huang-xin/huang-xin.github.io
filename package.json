@@ -1,0 +1,26 @@
+{
+  "name": "huang-xin.github.io",
+  "version": "1.0.0",
+  "description": "huang-xin blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huang-xin/huang-xin.github.io.git"
+  },
+  "keywords": [
+    "huangxin",
+    "huang-xin"
+  ],
+  "author": "huangxin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huang-xin/huang-xin.github.io/issues"
+  },
+  "homepage": "https://github.com/huang-xin/huang-xin.github.io",
+  "devDependencies": {
+    "marked": "^0.3.2"
+  }
+}
