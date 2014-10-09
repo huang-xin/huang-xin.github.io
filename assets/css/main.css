@@ -21,8 +21,8 @@ html, body {
 }
 @media (max-width: 400px) {
   .entry div {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+    /*-webkit-transform: scale(1.2);
+    transform: scale(1.2);*/
   }
 }
 .cf:before,
