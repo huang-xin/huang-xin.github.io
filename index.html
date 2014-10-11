@@ -3,41 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>huang-xin</title>
+
     <meta name="description" content="Huang-xin.github.io : blog">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!-- <link rel="stylesheet" href="./assets/css/stylesheet.css"> -->
-    <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
+    <!-- <link rel="stylesheet" href="./assets/css/main.css"> -->
+    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/highlight.js/8.2/styles/github.min.css">
 </head>
 <body>
     <!-- 
+    <script src="./assets/js/main.js"></script>
     <img src="./assets/img/baracktocat.jpg" alt="YES WE CODE!"> 
     <script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
     -->
+    <script src="http://apps.bdimg.com/libs/highlight.js/8.2/highlight.min.js"></script>
     <script src="http://cdn.staticfile.org/require.js/2.1.14/require.min.js"></script>
-    <!--
-    <script src="./assets/js/main.js"></script>
     
-    <div id="markdown">
-        
-    </div>
+    <article id="articles">
+        <div id="markdown"></div>        
+    </article>
     <script>
 
-        require(["./article/hello-github"], function(ctnt){
+        require(["./article/es6"], function(ctnt){
 
             var markdown = document.getElementById("markdown");
-            markdown.innerHTML = ctnt;
+            markdown.innerHTML = ctnt.html;
+            hljs.initHighlightingOnLoad();
 
         });
 
     </script>
-    -->
     
-    <div id="tardis" class="entry">
+    
+    <!-- <div id="tardis" class="entry">
         <div></div>
-    </div>
-
+    </div> -->
+    
 </body>
 </html>

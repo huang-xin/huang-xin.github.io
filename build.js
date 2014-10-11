@@ -2,29 +2,47 @@ var fs = require("fs");
 var path = require("path");
 var marked = require("marked");
 var mddir = "./md";
-var htmldir = "./article";
+var articledir = "./article";
 
 var mdsuffix = ".md";
 var jssuffix = ".js";
 
-function wrap(content){
+/**
+article template 
 
-	var prefix = "define";
-	var suffix = "";
-	return (prefix + content + suffix);
+define({
+	time : date.now(),
+	html : "xxx"
+	title : ""
+	tag : ""	
+});
+
+*/
+function dist(title, content){
+
+	var prefix = "define(";
+	var suffix = ");";
+	var contentObj = {
+		time : Date.now(),
+		html : content,
+		title : title
+	}
+
+	return (prefix + JSON.stringify(contentObj) + suffix);
 
 }
 
-function run(){
+//单量编译 & 全量编译
+!function compile(){
+
 	var mds = fs.readdirSync(mddir);
 	mds.forEach(function(md){
+		var title = path.basename(md, mdsuffix);
 		if(path.extname(md) === mdsuffix){
-			var htmlContent = marked(path.readFileSync(md));
-			var fileContent = wrap(content);
-			var filename = path.basename(md, mdsuffix) + jssuffix;
-			fs.writeFileSync(path.join(htmldir, filename), fileContent);
+			var htmlContent = marked( fs.readFileSync(path.join(mddir, md)).toString() );
+			var distContent = dist(title, htmlContent);
+			fs.writeFileSync(path.join(articledir, title + jssuffix), distContent);
 		}
 	});
-}
 
-run();
+}();
